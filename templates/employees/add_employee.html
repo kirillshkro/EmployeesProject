@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление сотрудника</title>
+    <link href="{% static 'employees/form_add.css' %}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+</head>
+<body>
+<h4 class="h4">Добавление сотрудника</h4>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <script>
+        $(() => {
+            $("#id_first_name").autocomplete({
+                source: JSON.parse("{{ names | escapejs }}"),
+                minLength: 1
+            })
+        })
+    </script>
+    <button type="submit">Добавить</button>
+    <a href="{% url 'index' %}">Отмена</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить запись</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Вы действительно хотите удалить запись о сотруднике {{ employee.first_name }}</p>
+    <button type="submit">Подтвердить</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать сведения о сотруднике</title>
+</head>
+<body>
+<form id="edit-form" method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Внести изменения</button>
+</form>
+</body>
+</html>
