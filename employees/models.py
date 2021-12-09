@@ -21,8 +21,8 @@ class DepartmentModel(models.Model):
 
 class EmployeeModel(models.Model):
     class Sex(models.TextChoices):
-        МУЖ = 'Муж.',
-        ЖЕН = 'Жен.'
+        Male = "МУЖ", "Мужской",
+        Female = "Жен.", "Женский"
 
     first_name = models.CharField(max_length=255, null=False, blank=False)
     last_name = models.CharField(max_length=255, null=False, blank=False)
